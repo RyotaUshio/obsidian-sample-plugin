@@ -1,5 +1,5 @@
 import { PluginSettingTab, Setting } from 'obsidian';
-import MyPlugin from './main';
+import MyPlugin from 'main';
 
 
 export interface MyPluginSettings {
@@ -40,6 +40,7 @@ export class SampleSettingTab extends PluginSettingTab {
 					.setPlaceholder('' + DEFAULT_SETTINGS[settingName])
 					.then((text) => text.inputEl.type = "number")
 					.onChange(async (value) => {
+						// @ts-ignore
 						this.plugin.settings[settingName] = value === '' ? DEFAULT_SETTINGS[settingName] : +value;
 						await this.plugin.saveSettings();
 					});
@@ -51,6 +52,7 @@ export class SampleSettingTab extends PluginSettingTab {
 			.addToggle((toggle) => {
 				toggle.setValue(this.plugin.settings[settingName])
 					.onChange(async (value) => {
+						// @ts-ignore
 						this.plugin.settings[settingName] = value;
 						await this.plugin.saveSettings();
 						extraOnChange?.(value);
@@ -94,7 +96,6 @@ export class SampleSettingTab extends PluginSettingTab {
 	}
 	
 	display(): void {
-		const {containerEl} = this;
-		containerEl.empty();
+		this.containerEl.empty();
 	}
 }
