@@ -1,5 +1,6 @@
 import { Plugin } from 'obsidian';
-import { MyPluginSettings, DEFAULT_SETTINGS, SampleSettingTab } from 'settings';
+
+import { MyPluginSettings, DEFAULT_SETTINGS, SampleSettingTab } from './settings';
 
 
 export default class MyPlugin extends Plugin {

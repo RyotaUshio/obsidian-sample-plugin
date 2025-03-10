@@ -8,6 +8,7 @@ This is a modified version of https://github.com/obsidianmd/obsidian-sample-plug
 - The plugin class definition and settings-related code are separated into `main.ts` and `settings.ts`
 - [Release GitHub action](https://docs.obsidian.md/Plugins/Releasing/Release+your+plugin+with+GitHub+Actions) is already there
   - Don't forget to go to `Settings > Actions > General > Workflow permissions` and turn on `Read and write permissions`
+- The dependencies have been updated
 - The default branch has been renamed `main`
 
 ## Usage
